@@ -1,0 +1,22 @@
+# Environments
+venv/
+env/
+
+# Python compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Config
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Cache and temp folders
+.cache/
+
+# Log files
+*.log
+.DS_Store
