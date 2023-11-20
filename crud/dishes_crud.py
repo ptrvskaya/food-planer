@@ -2,7 +2,6 @@ import requests
 from . import products_crud
 from config import NOTION_TOKEN
 
-NOTION_TOKEN = NOTION_TOKEN
 DATABASE_ID = "824e9af0994249ada04f33dc9e73311f"
 url = f"https://api.notion.com/v1/databases/{DATABASE_ID}/query"
 

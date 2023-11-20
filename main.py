@@ -1,17 +1,23 @@
 import asyncio
 import logging
-from app import handle_shopping_list_request, handle_dishes_list_request
+from aiogram import Bot, Dispatcher
+from config import BOT_TOKEN
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+event_loop = asyncio.new_event_loop()
+asyncio.set_event_loop(event_loop)
+
+bot = Bot(BOT_TOKEN)
+dp = Dispatcher(bot=bot, loop=event_loop)
+
+
+async def main():
+    await dp.start_polling(bot)
+
+
 if __name__ == '__main__':
-    event_loop = asyncio.get_event_loop()
+    from bot_handlers import dp
 
-    try:
-        asyncio.run(handle_shopping_list_request())
-        asyncio.run(handle_dishes_list_request())
-    except Exception:
-        print('Error')
-
-    event_loop.close()
+    asyncio.run(main())

@@ -3,7 +3,6 @@ from notion import NotionClient
 from crud import dishes_crud
 from config import NOTION_TOKEN
 
-NOTION_TOKEN = NOTION_TOKEN
 DATABASE_ID = "17b317c535c44d3a881f9208684aa225"
 url = f"https://api.notion.com/v1/databases/{DATABASE_ID}/query"
 

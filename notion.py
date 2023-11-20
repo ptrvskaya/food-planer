@@ -2,8 +2,6 @@ import json
 import requests
 from config import NOTION_TOKEN
 
-NOTION_TOKEN = NOTION_TOKEN
-
 
 class NotionClient:
 

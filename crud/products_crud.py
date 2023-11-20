@@ -1,7 +1,6 @@
 import requests
 from config import NOTION_TOKEN
 
-NOTION_TOKEN = NOTION_TOKEN
 DATABASE_ID = "06128957a2674355b17cacb595990322"
 url = f"https://api.notion.com/v1/databases/{DATABASE_ID}/query"
 

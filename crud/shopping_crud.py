@@ -4,7 +4,6 @@ from config import NOTION_TOKEN
 
 import requests
 
-NOTION_TOKEN = NOTION_TOKEN
 DATABASE_ID = "0a7b4421b5904cd6bbc1453d014ed5db"
 url = f"https://api.notion.com/v1/databases/{DATABASE_ID}/query"
 
@@ -64,3 +63,12 @@ async def delete_shopping_list():
             print("Failed to delete")
             print(result.text)
 
+
+async def serve_shopping_list():
+    list_items = await get_shopping_list()
+    new_list_items = []
+    for item in list_items:
+        new_list_items.append(item['properties']['Name']['title'][0]['plain_text'])
+
+    n = '\n'
+    return f'Shopping list:\n{n.join(str(item) for item in new_list_items)}'
