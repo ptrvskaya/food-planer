@@ -1,6 +1,8 @@
 import asyncio
 import logging
 from aiogram import Bot, Dispatcher
+from aiogram.fsm.storage.memory import MemoryStorage
+
 from config import BOT_TOKEN
 
 logging.basicConfig(level=logging.INFO)
@@ -10,7 +12,8 @@ event_loop = asyncio.new_event_loop()
 asyncio.set_event_loop(event_loop)
 
 bot = Bot(BOT_TOKEN)
-dp = Dispatcher(bot=bot, loop=event_loop)
+storage = MemoryStorage()
+dp = Dispatcher(bot=bot, storage=storage, loop=event_loop)
 
 
 async def main():

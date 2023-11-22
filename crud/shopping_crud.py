@@ -71,4 +71,4 @@ async def serve_shopping_list():
         new_list_items.append(item['properties']['Name']['title'][0]['plain_text'])
 
     n = '\n'
-    return f'Shopping list:\n{n.join(str(item) for item in new_list_items)}'
+    return f'\n{n.join(str(item) for item in new_list_items)}'
